@@ -1,3 +1,12 @@
+Instructions:
+Develop a simple web application integrating Laravel or Django Framework or any API. 
+Choose one from any of the suggested project below with its specific requirement
+
+A. Weather App (65pts):
+Create an application that fetches weather data from an API and displays it to the user.
+You can use API integration, handling JSON data, and presenting information in a user-friendly way.
+
+
 ReadME IT120
 
 How to Open the File
