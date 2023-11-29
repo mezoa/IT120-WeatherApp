@@ -1,54 +1,140 @@
+@font-face {
+  font-family: 'Satoshi'; /* Define the font-family name */
+  src: url('path-to-your-font/Satoshi-Regular.woff2') format('woff2'), /* Define the font file and format */
+       url('path-to-your-font/Satoshi-Regular.woff') format('woff'); /* Define alternative font formats */
+  /* Add additional font-weight and font-style if needed */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    text-align: center;
-    padding: 50px;
-  }
-  
-  form {
-    margin: 20px 0;
-  }
-  
-  input[type="text"] {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .forecast-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
+  background-color: #17181f;
+  font-family: 'Satoshi', Arial, sans-serif; 
+  text-align: center;
+  padding: 50px;
+  background-image: url('bg5.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #17181f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+form {
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #c84e4e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.comparison-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.city-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(57, 75, 156, 0.1);
+  color: #EEDF;
+  width: 45%;
+  box-sizing: border-box;
+}
+
+.daily-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: right ;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure the entire width is utilized */
+}
+
+.weather-text {
+  color: #17181f;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.weather-text h1,
+.weather-text h2,
+.weather-text p {
+  margin: 5px 0; /* Adjust margin for headers and paragraphs */
+  text-align: left
+}
+
+.weather-icon {
+  margin-left: 100; /* Push the icon to the right */
+}
+
+
+
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.forecast {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(57, 75, 156, 0.1);
+  padding: 12px;
+  width: 50%;
+  max-width: 170px;
+  backdrop-filter: blur(4px);
+}
+
+.forecast-text {
+  text-align: center;
+}
+
+.forecast-text h3,
+.forecast-text p {
+  margin: 10px 0; /* Adjust margin for the h3 and p elements */
+}
+
+.forecast-text h3 {
+  margin: 5px 0; /* Adjust margin for the h3 element */
+  color: black; /* Change font color to black */
+  text-transform: capitalize;
+}
+
+
+@media (min-width: 768px) {
   .forecast {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin: 10px;
-    width: calc(100% / 5 - 20px);
-    box-sizing: border-box;
+    width: 33.33%;
   }
-  
-  @media (max-width: 767px) {
-    .forecast {
-      width: calc(50% - 20px);
-    }
+}
+
+@media (max-width: 480px) {
+  .forecast {
+    width: 100%;
   }
-  
-  @media (max-width: 480px) {
-    .forecast {
-      width: 100%;
-    }
-  }
-  
+}

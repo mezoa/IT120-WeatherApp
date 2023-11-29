@@ -8,21 +8,26 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
+    <!-- Form to input two cities for weather comparison -->
     <form method="post">
         {% csrf_token %}
         <input type="text" name="city1" placeholder="City 1">
-        <input type="text" name="city2" placeholder="City 2">
         <button type="submit">Compare Weather</button>
+        <input type="text" name="city2" placeholder="City 2">
+        
     </form>
 
+    <!-- Display weather data and forecasts for each city -->
     <div class="comparison-container">
         {% if weather_data1 %}
+            <!-- Render weather data for City 1 -->
             <div class="city-container">
                 {% include 'weather_app/city_weather.html' with weather_data=weather_data1 daily_forecasts=daily_forecasts1 %}
             </div>
         {% endif %}
         
         {% if weather_data2 %} 
+            <!-- Render weather data for City 2 -->
             <div class="city-container">
                 {% include 'weather_app/city_weather.html' with weather_data=weather_data2 daily_forecasts=daily_forecasts2 %}
             </div>

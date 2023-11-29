@@ -1,19 +1,33 @@
+<!-- Render weather data for a city -->
 {% if weather_data %}
-    <h1>{{ weather_data.city }}</h1>
-    <h2>{{ weather_data.temperature }}°C </h2>
-    <p>{{ weather_data.description }}</p>
-    <img src="http://openweathermap.org/img/w/{{ weather_data.icon }}.png" alt="{{ weather_data.description }}">
+    <div class="daily-container">
+        <div class="weather-info">
+            <div class="weather-text">
+                <h1>{{ weather_data.city }}</h1>
+                <h2>{{ weather_data.temperature }}°C</h2>
+                <p>{{ weather_data.description }}</p>
+            </div>
+            <div class="weather-icon">
+                <img src="http://openweathermap.org/img/w/{{ weather_data.icon }}.png" alt="{{ weather_data.description }}">
+            </div>
+        </div>
+    </div>
 {% endif %}
 
+<!-- Render 5-day forecasts for a city -->
 {% if daily_forecasts %}
-    <h2>5-Day Forecasts</h2>
+    <h2>5 Days Forecasts</h2>
     <div class="forecast-container">
         {% for forecast in daily_forecasts %}
             <div class="forecast">
+                <div class="forecast-text">
                 <h3>{{ forecast.day }}</h3>
                 <p>{{ forecast.temp_min }}°C - {{ forecast.temp_max }}°C</p>
                 <p>{{ forecast.description }}</p>
+                </div>
+                <div class="forecast-icon">
                 <img src="http://openweathermap.org/img/w/{{ forecast.icon }}.png" alt="{{ forecast.description }}">
+                </div>
             </div>
         {% endfor %}
     </div>
